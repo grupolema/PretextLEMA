@@ -47,7 +47,7 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
         \newcommand{\doubler}[1]{2#1}
         </macros>
 
-        <rename element="inlineexercise" xml:lang="en-US">Problem</rename>
+        <rename element="inlineexercise" xml:lang="es">Problem</rename>
         <!-- <rename element="example" xml:lang="en-US">Checker</rename> -->
 
     </docinfo>
@@ -56,7 +56,7 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
         <title>Libro 1</title>
 
         <frontmatter>
-            <title> Introduccion</title>
+            <title> Introducción</title>
             <titlepage>
                 <author>
                     <!-- <personname>Calculus: Multivariable, McCallum, Hughes-Hallett, et al.</personname> -->
@@ -73,8 +73,474 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
         </frontmatter>
    
         <section>
-            <title> SECCION</title>            
-                
+            <title> SECCIÓN</title> 
+            <subsection>
+                <title> Los búhos le explican a Lorena qué es el crecimiento exponencial.</title>
+                <p> 
+                    Cuando Lorena se reunió con los búhos, ellos le explicaron que el número de enfermos crecía de manera exponencial. Lorena no tenía claro lo que esto quería decir. Los búhos quitaron del suelo algunas hojas secas y, con una pluma de guacamaya, comenzaron a escribir mientras iba contando una historia: 
+                </p>
+                <p>
+                    "Imagina que un día Patriarco, el puercoespín más viejo de la Aldea, se sintió enfermo. Sus dos hijos, que ya no vivían con él, fueron a visitarlo. Al día siguiente, los dos hijos de Patriarco también estaban enfermos. La enfermedad de Patriarco era contagiosa.   
+                </p>      
+                <p>
+                    <image source="images/CVdia2.svg" width="40%"/>
+                </p>  
+                <p>
+                    El hijo mayor, al volver a su casa, contagió a su esposa y a su mejor amigo. Y el hijo menor contagió a su novia y a su primo, que fueron a visitarlo."
+                </p>
+                <p>
+                    <image source="images/CVdia3.svg" width="70%" />
+                </p> 
+                <p>
+                    ¿No sería más fácil remplazar a cada animal por un punto?", propuso Lorena. "Excelente idea", dijo el búho que había estado escribiendo y dibujó un nuevo diagrama:
+                </p>
+                <p>
+                    <image source="images/CVdia3simplificado.svg" width="50%" />
+                </p>
+                <p>
+                    ¿Cuántos nuevos enfermos hubo el día 2?", preguntó el búho. Lorena miró los diagramas y dijo: " Dos, los dos hijos de Patriarco." "Muy bien, dijo el búho, ¿y cuántos nuevos enfermos hubo el día 3?" 
+                </p>
+                <p>
+                    Ayúdale a Lorena a responder a la pregunta. 
+                </p>
+                <p>
+                    <webwork>
+                        <pg-code>
+                            $ans=Compute("4");
+                        </pg-code>
+                        <statement>
+                            <p>
+                                El dia 3 hubo <var name="$ans" width="20"/> nuevos enfermos.
+                            </p>
+                        </statement>
+                        <solution>
+                            <p>
+                                Respuesta aca.
+                            </p>
+                        </solution>
+                    </webwork>
+                </p>
+                <p>
+                    El búho continuó: "Imagina que los 4 que se enfermaron el día 3 contagiaron, cada uno, a otras dos personas. Continúa el diagrama para el día 4. ¿Cuántos nuevos enfermos hubo el día 4?" Lorena agarró la pluma y continuó el diagrama. ¡Hazlo tu también!
+                </p>
+                <p>
+                    <image source="images/CVdia4simpl.svg" width="60%" />
+                </p>
+                <p>
+                    Lorena, intrigada, continuó el diagrama hasta el día 8. ¿Cuántos nuevos enfermos hubo el día 8?
+                </p>
+                <p>
+                    <webwork>
+                        <pg-code>
+                            $ans=Compute("128");
+                        </pg-code>
+                        <statement>
+                            <p>
+                                El dia 8 hubo <var name="$ans" width="20"/> nuevos enfermos.
+                            </p>
+                        </statement>
+                        <solution>
+                            <p>
+                                Respuesta aca.
+                            </p>
+                            <p>
+                                La respuesta es <m> <var name="$ans"/></m>.
+                            </p>
+                        </solution>
+                    </webwork>
+                </p>
+                <p>
+                    ¡Lorena quería saber qué pasaría al cabo de un mes! Sin embargo, al seguir avanzando en el diagrama, le resultaba más y más difícil dibujarlo, pues se necesita mucho espacio. Otro de los búhos le dijo: "Espera, pensemos en otra forma de contar los casos. Una forma que no requiere de tanto espacio." El diagrama de arriba podría meterse dentro de una tabla... pero también se necesitarían casillas cada vez más grandes."
+                </p>
+                <p>
+                    <table>
+                      <tabular halign="center" top="medium">
+                        <row bottom="medium">
+                          <cell left="medium" right="medium">
+                             día
+                          </cell>
+                          <cell right="medium">
+                            1
+                          </cell>
+                          <cell right="medium">
+                            2
+                          </cell>
+                          <cell right="medium">
+                            3
+                          </cell>
+                          <cell right="medium">
+                            4
+                          </cell>
+                          <cell right="medium">
+                            5
+                          </cell>
+                        </row>
+                        <row bottom="medium">
+                          <cell left="medium" right="medium">
+                             nuevos enfermos
+                          </cell>
+                          <cell right="medium">
+                            <m>\Large\bullet</m>
+                          </cell>
+                          <cell right="medium">
+                            <m>\begin{array}{c}\Large\bullet\\\Large\bullet\end{array}</m>
+                          </cell>
+                          <cell right="medium">
+                            <m>\begin{array}{c}\Large\bullet\\\Large\bullet\\\Large\bullet\\\Large\bullet\end{array}</m>
+                          </cell>
+                          <cell right="medium">
+                            <m>\begin{array}{c}\Large\bullet\\\Large\bullet\\\Large\bullet\\\Large\bullet\\\Large\bullet\\\Large\bullet\\\Large\bullet\\\Large\bullet\end{array}</m>
+                          </cell>
+                          <cell right="medium">
+                            <m>\begin{array}{c}\Large\bullet\\\Large\bullet\\\Large\bullet\\\Large\bullet\\\Large\bullet\\\Large\bullet\\\Large\bullet\\\Large\bullet\\\Large\bullet\\\Large\bullet\\\Large\bullet\\\Large\bullet\\\Large\bullet\\\Large\bullet\\\Large\bullet\\\Large\bullet\end{array}</m>
+                          </cell>
+                        </row>
+                      </tabular>
+                    </table>
+                </p>
+                <p>
+                    "Basándote en esa información, continuó el búho, podemos llenar esta otra tabla sólo con números." ¡Ayúdale a Lorena a completar la tabla!
+                </p>
+                <p>
+                    <table>
+                      <tabular halign="center" top="medium">
+                        <row bottom="medium">
+                          <cell left="medium" right="medium">
+                             día
+                          </cell>
+                          <cell right="medium">
+                            1
+                          </cell>
+                          <cell right="medium">
+                            2
+                          </cell>
+                          <cell right="medium">
+                            3
+                          </cell>
+                          <cell right="medium">
+                            4
+                          </cell>
+                          <cell right="medium">
+                            5
+                          </cell>
+                          <cell right="medium">
+                            6
+                          </cell>
+                          <cell right="medium">
+                            7
+                          </cell>
+                          <cell right="medium">
+                            8
+                          </cell>
+                        </row>
+                        <row bottom="medium">
+                          <cell left="medium" right="medium">
+                             nuevos enfermos
+                          </cell>
+                          <cell right="medium">
+                            1
+                          </cell>
+                          <cell right="medium">
+                            2
+                          </cell>
+                          <cell right="medium">
+                            4
+                          </cell>
+                          <cell right="medium">
+                            8
+                          </cell>
+                          <cell right="medium">
+                          </cell>
+                          <cell right="medium">
+                          </cell>
+                          <cell right="medium">
+                          </cell>
+                          <cell right="medium">
+                          </cell>
+                        </row>
+                      </tabular>
+                    </table>
+                </p>
+                <p>
+                    HASTA ACÁ SIRVE PARA GRADOS 3 y 4 
+                </p>
+                <p>
+                    "Observa, continuó el búho, que cada día el número de enfermos nuevos
+                    se va multiplicando por <m>2</m>. Por ejemplo, el día 6 hubo <m>32</m> nuevos
+                    enfermos, entonces el día 7 hubo <m>64</m> nuevos enfermos (pues <m>32\times2=64</m>)."
+                    Lorena revisó que esos eran sus resultados en la tabla. El búho le
+                    preguntó: "Si el día 13 hubo <m>4\,096</m> nuevos enfermos, ¿cuántos
+                    hubo el día 14?, ¿y el día 15?" 
+                </p>
+                <p>
+                    Ayúdale a Lorena a hacer los cálculos.
+                </p>
+                <table>
+                  <tabular halign="center" top="medium">
+                    <row bottom="medium">
+                      <cell left="medium" right="medium">
+                         día
+                      </cell>
+                      <cell right="medium">
+                        1
+                      </cell>
+                      <cell right="medium">
+                        2
+                      </cell>
+                      <cell right="medium">
+                        3
+                      </cell>
+                      <cell right="medium">
+                        4
+                      </cell>
+                      <cell right="medium">
+                        5
+                      </cell>
+                      <cell right="medium">
+                        <m>\: 6 \:</m>
+                      </cell>
+                      <cell right="medium">
+                        <m>\: 7 \:</m>
+                      </cell>
+                      <cell right="medium">
+                        <m>\: 8 \:</m>
+                      </cell>
+                      <cell right="medium">
+                        <m>\: 9 \:</m>  
+                      </cell>
+                      <cell right="medium">
+                        <m>\: 10 \:</m>  
+                      </cell>
+                      <cell right="medium">
+                        <m>\: 11 \:</m>  
+                      </cell>
+                      <cell right="medium">
+                        <m>\: 12 \:</m>  
+                      </cell>
+                      <cell right="medium">
+                        <m>\: 13 \:</m>   
+                      </cell>
+                      <cell right="medium">
+                        <m>\: 14 \:</m>   
+                      </cell>
+                      <cell right="medium">
+                        <m>\: 15 \:</m>   
+                      </cell>
+                    </row>
+                    <row bottom="medium">
+                      <cell left="medium" right="medium">
+                         nuevos enfermos
+                      </cell>
+                      <cell right="medium">
+                        <m>1</m>
+                      </cell>
+                      <cell right="medium">
+                        <m>2</m>
+                      </cell>
+                      <cell right="medium">
+                        <m>4</m>
+                      </cell>
+                      <cell right="medium">
+                        <m>8</m>
+                      </cell>
+                      <cell right="medium">
+                      </cell>
+                      <cell right="medium">
+                      </cell>
+                      <cell right="medium">
+                      </cell>
+                      <cell right="medium">
+                      </cell>
+                      <cell right="medium">
+                      </cell>
+                      <cell right="medium">
+                      </cell>
+                      <cell right="medium">
+                      </cell>
+                      <cell right="medium">
+                      </cell>
+                      <cell right="medium">
+                        <m>4\,096</m>
+                      </cell>
+                      <cell right="medium">
+                      </cell>
+                      <cell right="medium">
+                      </cell>
+                    </row>
+                  </tabular>
+                </table>
+                <p>
+                    "Muy bien, dijo Lorena, ahora sólo necesito continuar la tabla hasta
+                    llegar al día 30". Cuando Lorena iba llegando a la casilla 20, empezaba
+                    a cansarse de hacer los cálculos. Los números eran enormes, crecían
+                    mucho... y aún le faltaba mucho para llegar al 30! Bugle, el búho
+                    líder, tomó la palabra: "Déjame ayudarte. ¿Recuerdas los exponentes?
+                    Por ejemplo, <m>2^{3}=2\times2\times2</m>, es decir, <m>2</m> multiplicado
+                    por sí mismo tres veces. Y <m>2^{2}=2\times2</m>, y <m>2^{1}=2</m> y <m>2^{0}=1</m>."
+                    Lorena asintió. "Entonces, continuó Bugle, la tabla que estás llenando
+                    se puede escribir así:
+                </p>
+                <table>
+                  <tabular halign="center" top="medium">
+                    <row bottom="medium">
+                      <cell left="medium" right="medium">
+                         día
+                      </cell>
+                      <cell right="medium">
+                        1
+                      </cell>
+                      <cell right="medium">
+                        2
+                      </cell>
+                      <cell right="medium">
+                        3
+                      </cell>
+                      <cell right="medium">
+                        4
+                      </cell>
+                      <cell right="medium">
+                        5
+                      </cell>
+                      <cell right="medium">
+                        6
+                      </cell>
+                      <cell right="medium">
+                        7
+                      </cell>
+                      <cell right="medium">
+                        <m>\:8\:</m>
+                      </cell>
+                      <cell right="medium">
+                        <m>\:9\:</m>
+                      </cell>
+                      <cell right="medium">
+                        <m>\:10\:</m>
+                      </cell>
+                      <cell right="medium">
+                        <m>\:11\:</m>
+                      </cell>
+                      <cell right="medium">
+                        <m>\:12\:</m>
+                      </cell>
+                      <cell right="medium">
+                        <m>\:13\:</m>
+                      </cell>
+                    </row>
+                    <row bottom="medium">
+                      <cell left="medium" right="medium">
+                         nuevos enfermos
+                      </cell>
+                      <cell right="medium">
+                        <m>2^{0}</m>
+                      </cell>
+                      <cell right="medium">
+                        <m>2^{1}</m>
+                      </cell>
+                      <cell right="medium">
+                        <m>2^{2}</m>
+                      </cell>
+                      <cell right="medium">
+                        <m>2^{3}</m>
+                      </cell>
+                      <cell right="medium">
+                      </cell>
+                      <cell right="medium">
+                      </cell>
+                      <cell right="medium">
+                      </cell>
+                      <cell right="medium">
+                      </cell>
+                      <cell right="medium">
+                      </cell>
+                      <cell right="medium">
+                      </cell>
+                      <cell right="medium">
+                      </cell>
+                      <cell right="medium">
+                      </cell>
+                      <cell right="medium">
+                      </cell>
+                    </row>
+                  </tabular>
+                </table>
+                <p>
+                    ¿Puedes completarla usando exponentes?" Lorena aceptó el reto. Ayúdala!
+                </p>
+                <p>
+                    Al llegar al día 13, Lorena comprobó que el día 13 habría <m>4\,096</m>
+                    casos nuevos, como había dicho el búho. Pues el día 13 habría <m>2^{12}</m>
+                    nuevos enfermos. Y <m>2^{12}=4\,096</m>.
+                </p>
+                <p>
+                    Lorena descubrió que ya no era necesario calcular el número de nuevos
+                    enfermos todos los días anteriores al 30... ¡podía calcularlo directamente!
+                </p>
+                <p>
+                    ¿Puedes hacerlo?
+                </p>
+                <p>
+                    ESPACIO
+                </p>
+                <p>
+                    Lorena concluyó: "¡Luego de 30 días de que Patriarco se enfermó
+                    habría más de 500 millones de animales enfermos! Porque <m>2^{29}=536\,870\,912</m>."
+                </p>
+                <p>
+                    Lorena miró a los búhos aterrada. ¡El número de enfermos aumenta muy
+                    rápido! 
+                </p>
+                <p>
+                    Bugle, con su expresión tranquila, le dijo: "Esto fue un ejemplo de crecimiento exponencial, en el que cada día se duplica el número de nuevos enfermos".
+                </p>
+                <p>
+                    "¿Pero, ¿podría ser peor?", preguntó Lorena. 
+                </p>
+                <p>
+                    "Claro, dijo el búho. Imagina que Patriarco hubiera contagiado a tres presonas el primer día. Y que cada una de esas personas hubiera contagiado a otras tres al día siguiente. Y así sucecivamente. ¿Cuántos enfermos nuevos habría al cabo de 30 días?" Lorena agarró la pluma y comenzó a dibujar tablas y diagramas. ¡Ayúdala a resolver ese problema!
+                </p>
+                <p>
+                    ESPACIO
+                </p>
+                <p>
+                    Cuando Lorena hubo analizado el caso en el cual cada día se triplica el número de nuevos enfermos, Bugle la tranquilizó: "La situación de La Aldea, aunque es grave, no es tan grave como la de estos dos ejemplos. El virus se está expandiendo, crece de manera exponencial, pero no tan rápido. El número de nuevos enfermos no se está duplicando cada día, sino aproximadamente cada 5 días. Hoy tenemos 25 animales enfermos en La Aldea, así que en 5 días...". "Habrá 50.", interrumpió Lorena. "Exacto", dijo Bugle. Si el primer día Patriarco se enferma y el número de nuevos enfermos se duplica cada 5 días, ¿cuántos nuevos enfermos habrá el día 30? Hacer una tabla puede ayudarte a responder.
+                </p>
+                <p>
+                    ESPACIO
+                </p>
+                <p>
+                    HASTA ACÁ SIRVE PARA GRADOS 5 y 6 (desde el comienzo hasta acá) 
+                </p>
+                <p>
+                    Uno de los búhos que había estado atento a la conversación, le dijo a Lorena "Si quieres comparar todos esos casos, puede ser conveniente que hagas unas gráficas. Podemos poner el tiempo en el eje horizontal, y el número de nuevos enfermos en el eje vertical". Mientras hablaba comenzó a dibujar. Si nos devolvemos al caso en el que se duplican los enfermos nuevos cada día, podríamos poner los siguientes puntos: un primer punto para indicar que el día 1 sólo hubo un nuevo enfermo; otro punto para indicar que el día 2 hubo dos nuevos enfermos; otro punto para indicar que el día 3 hubo 4 nuevos enfermos; y así sucesivamente. 
+                </p>
+                <p>
+                    <image source="images/CV2alat.svg" width="80%"/>
+                </p>
+                <p>
+                    La situación puedes representarla con puntos, o con una curva que une los puntos, o con barras.
+                </p>
+                <p>
+                    <image source="images/CV2alatFIG2.svg" width="100%"/>
+                </p>
+                <p>
+                    Por ahora tomemos la representación de la curva que une los puntos. Puedes graficar, ahí mismo, la situación en la cual se triplican los nuevos enfermos cada día, y también la situación de La Aldea, en la que se duplican cada 5 días.
+                </p>
+                <p>
+                    Aunque todas crecen de manera exponencial, unas crecen más rápido que otras."
+                </p>
+                <p>
+                    Lorena preguntó, "¿Tienen una gráfica para lo que ha sucedido en La Aldea?". Los búhos trajeron una gráfica:
+                </p>
+                <p>
+                    <image source="images/CVAalat.svg" width="90%"/>
+                </p>
+                <p>
+                    "El primer día hubo dos animales que reportaron estar enfermos, continuó Bugle. El segundo hubo 3 nuevos casos. Hoy, que es el día 6 desde el primer reporte, se reportaron 25 nuevos enfermos. El resto de la gráfica es una predicción: es lo que puede suceder si no se toman medidas preventivas." Lorena miró la gráfica con detenimiento. Pensaba: "Si espero 4 días más, hasta el día 10, habrá cerca de 100 nuevos animales enfermos ese día. No habría que esperar muchos días para que el número de nuevos enfermos fuera de 300 en un día". Observa la gráfica. ¿Cuál sería el primer día en el cual se reportarían más de 300 nuevos enfermos?
+                </p>
+                <p>
+                    Lorena comprendió la gravedad de la situación. "¿Qué podemos hacer?, preguntó, ¿Cómo frenamos este crecimiento exponencial?" Bugle le respondió: Lo único que puede ayudar es que los animales se queden en su madriguera, que no salgan y no tengan contacto con otros animales.
+                </p>
+            </subsection>
         </section>
     </article>
 </pretext>
