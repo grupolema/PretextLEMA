@@ -1,0 +1,1 @@
+This is the folder where the mbx script places the WebWork output from the server when running the mbx script. This is what is merged into the xml.

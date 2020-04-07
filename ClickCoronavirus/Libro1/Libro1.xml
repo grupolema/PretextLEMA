@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!--********************************************************************
+Copyright 2015 Robert A. Beexer
+
+This file is part of MathBook XML.
+
+MathBook XML is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 2 or version 3 of the
+License (at your option).
+
+MathBook XML is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
+*********************************************************************-->
+
+<!-- To process this file do                                                                      -->
+<!--                                                                                              -->
+<!-- (1) LaTeX/PDF:                                                                               -->
+<!--     xsltproc -o index.tex mathbook/xsl/mathbook-latex.xsl index.xml                      -->
+<!--     pdflatex index.tex                                                                     -->
+<!--     xelatex index.tex                                                                      -->
+<!--                                                                                              -->
+<!-- (2) HTML:                                                                                    -->
+<!--     xsltproc mathbook/xsl/mathbook-html.xsl index.xml                                      -->
+<!--     <browswer>  index.html                                                                 -->
+<!--                                                                                              -->
+<!-- (3) CoCalc worksheet (parameter causes a single file for output)                             -->
+<!--     REMOVE the "X" in the double dash (which is not legal in an XML comment)                 -->
+<!--     xsltproc -X-stringparam chunk.level 0 mathbook/xsl/mathbook-smc.xsl index.xml          -->
+<!--     <CoCalc> index.sagews                                                                  -->
+<!--                                                                                              -->
+<!-- (4) Sage doctesting                                                                          -->
+<!--     REMOVE the "X" in the double dash (which is not legal in an XML comment)                 -->
+<!--     xsltproc -X-stringparam chunk.level 0 mathbook/xsl/mathbook-sage-doctest.xsl index.xml -->
+<!--     <read further instructions in> index.py                                                -->
+
+<pretext>
+
+    <docinfo>
+        <macros>
+        \newcommand{\doubler}[1]{2#1}
+        </macros>
+
+        <rename element="inlineexercise" xml:lang="en-US">Problem</rename>
+        <!-- <rename element="example" xml:lang="en-US">Checker</rename> -->
+
+    </docinfo>
+
+    <article xml:id="Libro1">
+        <title>Libro 1</title>
+
+        <frontmatter>
+            <title> Introduccion</title>
+            <titlepage>
+                <author>
+                    <!-- <personname>Calculus: Multivariable, McCallum, Hughes-Hallett, et al.</personname> -->
+                    <institution>Grupo LEMA (www.grupolema.org) </institution>
+                </author>
+                <date><today /></date>
+            </titlepage>
+
+            <abstract>
+                 <p>
+                    ABSTRACT
+                </p>
+            </abstract>
+        </frontmatter>
+   
+        <section>
+            <title> SECCION</title>            
+                
+        </section>
+    </article>
+</pretext>
