@@ -40,14 +40,14 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
 <!--     xsltproc -X-stringparam chunk.level 0 mathbook/xsl/mathbook-sage-doctest.xsl index.xml -->
 <!--     <read further instructions in> index.py                                                -->
 
-<pretext>
+<pretext xml:lang="es-ES">
 
     <docinfo>
         <macros>
         \newcommand{\doubler}[1]{2#1}
         </macros>
 
-        <rename element="inlineexercise" xml:lang="es">Problem</rename>
+        <rename element="inlineexercise">Problem</rename>
         <!-- <rename element="example" xml:lang="en-US">Checker</rename> -->
 
     </docinfo>
