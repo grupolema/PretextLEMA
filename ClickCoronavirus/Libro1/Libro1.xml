@@ -103,6 +103,10 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
                 <p>
                     Ayúdale a Lorena a responder a la pregunta. 
                 </p>
+                <!-- Ese intenta cargar el archivo con tildes del servidor. -->
+                <!-- <p> -->
+                  <!-- <webwork source="local/problema.pg"/> -->
+                <!-- </p> -->
                 <webwork>
                     <pg-code>
                         $ans=Compute("4");
@@ -118,9 +122,6 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
                         </p>
                     </solution>
                 </webwork>
-                <!-- <p> -->
-                  <!-- <webwork source="local/problema.pg"/> -->
-                <!-- </p> -->
                 <p>
                     El búho continuó: "Imagina que los 4 que se enfermaron el día 3 contagiaron, cada uno, a otras dos personas. Continúa el diagrama para el día 4. ¿Cuántos nuevos enfermos hubo el día 4?" Lorena agarró la pluma y continuó el diagrama. ¡Hazlo tu también!
                 </p>
