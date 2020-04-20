@@ -5,6 +5,7 @@ const connection = require('./db');
 const bookRouter = require('./routes/book');
 const challengeRouter = require('./routes/challenge');
 const problemRouter = require('./routes/problem');
+const answerRouter = require('./routes/answer');
 
 const app = express();
 
@@ -15,5 +16,6 @@ app.use(morgan('tiny'));
 app.use('/books', bookRouter);
 app.use('/books/:bookId/challenges', challengeRouter);
 app.use('/books/:bookId/challenges/:challengeId', problemRouter);
+app.use('/answers', answerRouter);
 
 module.exports = app;
