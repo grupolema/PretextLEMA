@@ -5,8 +5,8 @@ const Problem = require('../models/problem.model');
 module.exports = {
   async getAll(req, res) {
     try {
-      const { bookId } = req.params.bookId;
-      challenges = await Challenge.find({book: bookId}).populate('book', 'problems');
+      challenges = await Challenge.find().populate('book');
+      console.log(challenges);
       res.status(200).json(challenges);
     } catch (error) {
       res.status(500).json({ error });

@@ -14,7 +14,7 @@ app.use(cors());
 app.use(morgan('tiny'));
 
 app.use('/books', bookRouter);
-app.use('/books/:bookId/challenges', challengeRouter);
+app.use('/challenges', challengeRouter);
 app.use('/books/:bookId/challenges/:challengeId', problemRouter);
 app.use('/answers', answerRouter);
 

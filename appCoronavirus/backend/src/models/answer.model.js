@@ -20,3 +20,5 @@ const answerSchema = new Schema({
 });
 
 const Answer = model('Answer', answerSchema);
+
+module.exports = Answer;

@@ -13,10 +13,6 @@ const problemSchema = new Schema({
     type: String,
     required: true,
   },
-  hint: {
-    type: String,
-    required: true,
-  },
   validation: {
     type: Number,
     required: true,
@@ -32,3 +28,5 @@ const problemSchema = new Schema({
 });
 
 const Problem = model('Problem', problemSchema);
+
+module.exports = Problem;

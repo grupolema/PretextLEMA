@@ -1,10 +1,10 @@
-const router = require('express').Router({ mergeParams: true });
+const router = require('express').Router();
 const challengeController = require('../controllers/challenge.controller');
 
 router.route('/').get(challengeController.getAll);
 router.route('/').post(challengeController.create);
-router.route('/:challengeId').get(challengeController.getOne);
-router.route('/:challengeId').put(challengeController.update);
-router.route('/:challengeId').delete(challengeController.delete);
+router.route('/:id').get(challengeController.getOne);
+router.route('/:id').put(challengeController.update);
+router.route('/:id').delete(challengeController.delete);
 
 module.exports = router;

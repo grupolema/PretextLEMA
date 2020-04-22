@@ -8,8 +8,11 @@ const bookSchema = new Schema({
   title: {
     type: String,
     required: true,
-  },
+  },  
   description: {
+    type: String
+  },
+  bigBook: {
     type: String
   },
   challenges:{
@@ -20,3 +23,5 @@ const bookSchema = new Schema({
 });
 
 const Book = model('Book', bookSchema);
+
+module.exports = Book;

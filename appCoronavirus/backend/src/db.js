@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const uri = process.env.MONGO_URI || 'mongodb://localhost:27017/coronavirus';
+const uri = process.env.MONGO_URI;
 
 const options = {
   useNewUrlParser: true,

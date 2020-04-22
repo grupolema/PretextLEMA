@@ -7,12 +7,13 @@ module.exports = {
       books = await Book.find().populate('challenges');
       res.status(200).json(books);
     } catch (error) {
+      console.log(error);
       res.status(500).json({ error });
     }
   },
   async getOne(req, res) {
     try {
-      const { id } = req.params.bookId;
+      const { id } = req.params;
       const book = await Book.findById(id).populate('challenges');
       res.status(200).json(book);
     } catch (error) {
@@ -34,7 +35,7 @@ module.exports = {
   },
   async update(req, res) {
     try {
-      const { id } = req.params.bookId;
+      const { id } = req.params;
       const options = {
         new: true,
         runValidations: true,
@@ -50,7 +51,7 @@ module.exports = {
   },
   async delete(req, res) {
     try {
-      const { id } = req.params.bookId;
+      const { id } = req.params;
       const book = await Book.findByIdAndDelete(id);
       res.status(200).json(book);
     } catch (error) {

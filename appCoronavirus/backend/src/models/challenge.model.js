@@ -5,17 +5,23 @@ const challengeSchema = new Schema({
     type: String,
     required: true,
   },
+  title: {
+    type: String
+  },
   description: {
     type: String,
     required: true,
   },
-    context: {
+  context: {
     type: String,
     required: true,
   },
   instructions: {
     type: String,
     required: true,
+  },
+  grades: {
+    type: [Number]
   },
   hint: {
     type: String,
@@ -32,3 +38,5 @@ const challengeSchema = new Schema({
 });
 
 const Challenge = model('Challenge', challengeSchema);
+
+module.exports = Challenge;
