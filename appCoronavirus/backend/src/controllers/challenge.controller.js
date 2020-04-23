@@ -14,7 +14,7 @@ module.exports = {
   },
   async getOne(req, res) {
     try {
-      const { id } = req.params.challengeId;
+      const { id } = req.params;
       const challenge = await Challenge.findById(id).populate('book', 'problems');
       res.status(200).json(challenge);
     } catch (error) {
@@ -36,7 +36,7 @@ module.exports = {
   },
   async update(req, res) {
     try {
-      const { id } = req.params.challengeId;
+      const { id } = req.params;
       const options = {
         new: true,
         runValidations: true,
@@ -52,7 +52,7 @@ module.exports = {
   },
   async delete(req, res) {
     try {
-      const { id } = req.params.challengeId;
+      const { id } = req.params;
       const challenge = await Challenge.findByIdAndDelete(id);
       res.status(200).json(challenge);
     } catch (error) {

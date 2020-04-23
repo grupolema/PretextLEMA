@@ -5,8 +5,7 @@ const Answer = require('../models/answer.model');
 module.exports = {
   async getAll(req, res) {
     try {
-      const { challengeId } = req.params.challengeId;
-      problems = await Problem.find({challenge: challengeId}).populate('challenge', 'answers');
+      problems = await Problem.find().populate('challenge', 'answers');
       res.status(200).json(problems);
     } catch (error) {
       res.status(500).json({ error });
@@ -14,7 +13,7 @@ module.exports = {
   },
   async getOne(req, res) {
     try {
-      const { id } = req.params.problemId;
+      const id = req.params.problemId;
       const problem = await Problem.findById(id).populate('challenge', 'answers');
       res.status(200).json(problem);
     } catch (error) {
@@ -36,7 +35,7 @@ module.exports = {
   },
   async update(req, res) {
     try {
-      const { id } = req.params.problemId;
+      const id = req.params.problemId;
       const options = {
         new: true,
         runValidations: true,
@@ -52,7 +51,7 @@ module.exports = {
   },
   async delete(req, res) {
     try {
-      const { id } = req.params.problemId;
+      const id = req.params.problemId;
       const problem = await Problem.findByIdAndDelete(id);
       res.status(200).json(problem);
     } catch (error) {
