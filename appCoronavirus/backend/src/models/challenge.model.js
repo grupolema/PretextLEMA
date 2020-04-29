@@ -5,6 +5,10 @@ const challengeSchema = new Schema({
     type: String,
     required: true,
   },
+  number: {
+    type: Number,
+    required: true,
+  },
   title: {
     type: String
   },
