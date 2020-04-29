@@ -16,7 +16,7 @@ module.exports = {
         { user },
         process.env.SECRET,
         {
-          expiresIn: 1000 * 60 * 60,
+          expiresIn: 1000 * 60 * 60 * 24,
         }
       );
 
@@ -25,7 +25,7 @@ module.exports = {
       res.status(400).json({ error });
     }
   },
-  async signin(req, res) {
+  async login(req, res) {
     try {
       const { password, username } = req.body;
       const user = await User.findOne({ username });
@@ -39,7 +39,7 @@ module.exports = {
         { user },
         process.env.SECRET,
         {
-          expiresIn: 1000 * 60 * 60,
+          expiresIn: 1000 * 60 * 60 * 24,
         }
       );
 

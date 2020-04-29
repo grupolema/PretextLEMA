@@ -27,10 +27,6 @@ const challengeSchema = new Schema({
   grades: {
     type: [Number]
   },
-  hint: {
-    type: String,
-    required: true,
-  },
   book:{
     type: { type: Schema.Types.ObjectId, ref: 'Book' }
   },

@@ -17,6 +17,10 @@ const problemSchema = new Schema({
     type: Number,
     required: true,
   },
+  hint: {
+    type: String,
+    required: true,
+  },
   challenge:{
     type: { type: Schema.Types.ObjectId, ref: 'Challenge' }
   },

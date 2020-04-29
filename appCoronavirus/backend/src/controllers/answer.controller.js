@@ -28,6 +28,11 @@ module.exports = {
         user.answers.push(answer);
         await user.save();
       });
+      await req.body.problem.forEach(async id => {
+        const problem = await Problem.findById(id);
+        problem.answers.push(answer);
+        await problem.save();
+      });
       res.status(200).json(answer);
     } catch (error) {
       res.status(400).json({ error });

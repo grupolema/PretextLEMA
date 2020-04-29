@@ -19,6 +19,10 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
+  grade: {
+    type: Number,
+    required: true
+  },
   password: {
     type: String,
     required: true,
@@ -26,7 +30,7 @@ const userSchema = new Schema({
   type: {
     type: String,
     enum: ['ADMIN', 'STUDENT'],
-    default: 'ADMIN'
+    default: 'STUDENT'
   }
 }, {
   timestamps: true,
